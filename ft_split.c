@@ -6,7 +6,7 @@
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 12:58:36 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/08 20:59:59 by alijenabi        ###   ########.fr       */
+/*   Updated: 2022/05/08 21:41:23 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ static size_t	st_word_count(char const *s, char c)
  * 			allocation fails.
  * @note The sole job of this function is to get rid of norminette warning.
  */
-char	**st_split(const char	**ans, char const *s,
+static char	**st_split(const char	**ans, char const *s,
 					char c, size_t split_count)
 {
 	char		*current;
