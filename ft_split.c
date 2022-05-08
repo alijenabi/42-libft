@@ -6,7 +6,7 @@
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 12:58:36 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 15:29:38 by alijenabi        ###   ########.fr       */
+/*   Updated: 2022/05/08 20:59:59 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ static size_t	st_next_word_len(char const **s, char c)
 
 /**
  * Counts the number of words in side the string ('s').
- * @param[in] s	The adress of string to be split.
- * @param[in] c	The delimiter character.
+ * @param s[in]	The adress of string to be split.
+ * @param c[in]	The delimiter character.
  * @return The number of words in string 's'.
  */
 static size_t	st_word_count(char const *s, char c)
@@ -60,29 +60,22 @@ static size_t	st_word_count(char const *s, char c)
 }
 
 /** 
- * Allocates (with malloc(3)) and returns an array of strings obtained by 
- * splitting ’s’ using the character ’c’ as a delimiter. The array must end 
- * with a NULL pointer.
- * @param[in] s  The string to be split.
- * @param[in] c  The delimiter character.
+ * Splits ’s’, 'count' time using the character ’c’ and puts them in 'ans'.
+ * @param ans[in,out] The alocated memory to put the result in it.
+ * @param s[in]       The string to be split.
+ * @param c[in]       The delimiter character.
+ * @param count[in]   The number of world need to be splited
  * @return The array of new strings resulting from the split. NULL if the 
  * 			allocation fails.
+ * @note The sole job of this function is to get rid of norminette warning.
  */
-char	**ft_split(char const *s, char c)
+char	**st_split(const char	**ans, char const *s,
+					char c, size_t split_count)
 {
-	const char	**ans;
-	char		**ans_itr;
 	char		*current;
-	size_t		split_count;
+	char		**ans_itr;
 
-	if (!s)
-		return (NULL);
-	split_count = st_word_count(s, c);
-	ans = (const char **)malloc((split_count + 1) * sizeof(char *));
-	if (!ans)
-		return (0);
 	ans_itr = (char **)ans;
-	current = 0;
 	while (split_count)
 	{
 		current = (char *)malloc((st_next_word_len(&s, c) + 1) * sizeof(char));
@@ -95,6 +88,30 @@ char	**ft_split(char const *s, char c)
 		ans_itr++;
 		split_count--;
 	}
+	current = 0;
 	*ans_itr = 0;
 	return ((char **)ans);
+}
+
+/** 
+ * Allocates (with malloc(3)) and returns an array of strings obtained by 
+ * splitting ’s’ using the character ’c’ as a delimiter. The array must end 
+ * with a NULL pointer.
+ * @param s[in]  The string to be split.
+ * @param c[in]  The delimiter character.
+ * @return The array of new strings resulting from the split. NULL if the 
+ * 			allocation fails.
+ */
+char	**ft_split(char const *s, char c)
+{
+	const char	**ans;
+	size_t		count;
+
+	if (!s)
+		return (NULL);
+	count = st_word_count(s, c);
+	ans = (const char **)malloc((count + 1) * sizeof(char *));
+	if (!ans)
+		return (0);
+	return (st_split(ans, s, c, count));
 }

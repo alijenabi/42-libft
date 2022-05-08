@@ -6,7 +6,7 @@
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 16:22:15 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 13:02:45 by alijenabi        ###   ########.fr       */
+/*   Updated: 2022/05/08 20:57:52 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int	st_pow(int base, int power)
  * Allocates (with malloc(3)) and returns a string representing a positive 
  * integer received as an argument. 
  * @note Negative numbers are not handled and behaviour is undefined.
- * @param[in] n The positive integer to convert.
+ * @param n[in] The positive integer to convert.
  * @return The string representing the integer. NULL if the allocation fails.
  */
 static char	*st_itop(int n)
@@ -95,7 +95,7 @@ static char	*st_itop(int n)
  * Allocates (with malloc(3)) and returns a string representing the integer 
  * received as an argument. 
  * @note Negative numbers are handled.
- * @param[in] n The integer to convert.
+ * @param n[in] The integer to convert.
  * @return The string representing the integer. NULL if the allocation fails.
  */
 char	*ft_itoa(int n)
