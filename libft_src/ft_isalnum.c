@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 18:11:09 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 13:51:22 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/04/25 22:09:14 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 /**
- * Outputs the string 's' to the given file desciptor.
- * @param s[in]   The string to output.
- * @param fd[in]  The file descriptor on which to write.
+ * These functions check whether character c, which must have the value of an 
+ * unsigned char or EOF, is an alphanumeric character
+ * @param c[in] The character.
+ * @return true (1) if c is alphanumeric and false (0) otherwise.
  */
-void	ft_putendl_fd(char *s, int fd)
+int	ft_isalnum(int c)
 {
-	ft_putstr_fd(s, fd);
-	ft_putchar_fd('\n', fd);
+	return (ft_isdigit(c) || ft_isalpha(c));
 }

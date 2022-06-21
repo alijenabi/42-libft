@@ -6,11 +6,11 @@
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 10:29:08 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 14:47:18 by alijenabi        ###   ########.fr       */
+/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 /**
  * Adds the node ’new’ at the end of the list.

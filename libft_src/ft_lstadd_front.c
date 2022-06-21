@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 10:17:27 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 13:34:10 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/03 09:55:06 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 /**
- * Returns the last node of the list.
- * @param lst[in] The beginning of the list.
- * @return Last node of the list.
+ * Adds the node ’new’ at the beginning of the list.
+ * @param lst[in, out] The address of a pointer to the first link of a list.
+ * @param new[in]      The address of a pointer to the node to be added to 
+ *                     the list.
  */
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	if (!lst)
-		return (0);
-	while (lst->next)
-		lst = lst->next;
-	return (lst);
+	new->next = *lst;
+	*lst = new;
 }

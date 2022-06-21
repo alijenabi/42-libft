@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 10:12:05 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 13:36:50 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/03 11:29:09 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 /**
- * Counts the number of nodes in a list.
- * @param lst[in] The beginning of the list.
- * @return The length of the list.
+ * Iterates the list ’lst’ and applies the function ’f’ on the content of each
+ * node.
+ * @param lst[in, out] The address of a pointer to a node.
+ * @param f[in]        The address of the function used to iterate on the list.
  */
-int	ft_lstsize(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-	int	itr;
-
-	itr = 0;
 	if (!lst)
-		return (0);
-	itr++;
+		return ;
 	while (lst->next)
 	{
-		itr++;
+		if (lst->content)
+			f(lst->content);
 		lst = lst->next;
 	}
-	return (itr);
+	if (lst->content)
+		f(lst->content);
 }

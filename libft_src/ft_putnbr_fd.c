@@ -6,11 +6,11 @@
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 18:17:49 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 13:51:37 by alijenabi        ###   ########.fr       */
+/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 #include <unistd.h>
 
 /**

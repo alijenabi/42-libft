@@ -6,11 +6,11 @@
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/26 00:17:21 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/05/05 13:01:51 by alijenabi        ###   ########.fr       */
+/*   Updated: 2022/06/21 12:14:04 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../libft.h"
 
 static int	st_isnumber(const char *c)
 {
