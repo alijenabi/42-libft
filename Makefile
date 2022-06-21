@@ -6,7 +6,7 @@
 #    By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 16:57:21 by alijenabi         #+#    #+#              #
-#    Updated: 2022/06/21 12:27:10 by alijenabi        ###   ########.fr        #
+#    Updated: 2022/06/21 12:35:44 by alijenabi        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -64,7 +64,13 @@ LIBFT_LIST_SRC := $(LIBFT_DIR)ft_lstadd_back.c	\
 			$(LIBFT_DIR)ft_lstnew.c				\
 			$(LIBFT_DIR)ft_lstsize.c
 
-LIBFT_SRC := $(LIBFT_MSRC) $(LIBFT_LIST_SRC)
+LIBFT_PRINTF_EXTRAS_SRC := 						\
+			$(LIBFT_DIR)ft_str_tolower.c		\
+			$(LIBFT_DIR)ft_str_toupper.c		\
+			$(LIBFT_DIR)ft_strinv.c				\
+			$(LIBFT_DIR)ft_ulong_to_str.c	
+
+LIBFT_SRC := $(LIBFT_MSRC) $(LIBFT_LIST_SRC) $(LIBFT_PRINTF_EXTRAS_SRC)
 
 SRC := $(LIBFT_SRC)
 

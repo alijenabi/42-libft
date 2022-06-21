@@ -1,22 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_str_toupper.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 21:11:20 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:33:17 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/22 23:03:19 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 12:29:30 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "libft_init.h"
 
-// Adding the original libft.
-# include "libft_init/libft_init.h"
+char	*ft_str_toupper(char *str)
+{
+	char	*itr;
 
-// Adding the ft_printf
-# include "libft_init/ft_printf_extras.h"
-
-#endif
+	itr = str;
+	while (*itr)
+	{
+		*itr = ft_toupper(*itr);
+		itr++;
+	}
+	return (str);
+}
