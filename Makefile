@@ -6,7 +6,7 @@
 #    By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 16:57:21 by alijenabi         #+#    #+#              #
-#    Updated: 2022/06/21 12:58:42 by alijenabi        ###   ########.fr        #
+#    Updated: 2022/06/21 21:46:07 by alijenabi        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,15 @@ OFLAG ?= -O3
 OBJDIR ?= build/
 LIBFT_DIR ?= libft_init/
 PRINTF_DIR ?= printf/
+GNL_DIR ?= get_next_line/
 
 HEADERS := 							 	\
 	libft.h					 			\
 	$(LIBFT_DIR)libft_init.h 			\
 	$(LIBFT_DIR)ft_printf_extras.h 		\
 	$(PRINTF_DIR)ft_printf.h			\
-	$(PRINTF_DIR)ft_printf_helpers.h
+	$(PRINTF_DIR)ft_printf_helpers.h	\
+	$(GNL_DIR)get_next_line.h
 
 LIBFT_MSRC :=							\
 	$(LIBFT_DIR)ft_atoi.c				\
@@ -88,9 +90,13 @@ PRINTF_SRC := 							\
 	$(PRINTF_DIR)ft_printf_if_pointer.c \
 	$(PRINTF_DIR)ft_printf_if_string.c
 
+GNL_SRC := 							\
+	$(GNL_DIR)get_next_line.c 			\
+	$(GNL_DIR)get_next_line_utils.c
+
 LIBFT_SRC := $(LIBFT_MSRC) $(LIBFT_LIST_SRC) $(LIBFT_PRINTF_EXTRAS_SRC)
 
-SRC := $(LIBFT_SRC) $(PRINTF_SRC)
+SRC := $(LIBFT_SRC) $(PRINTF_SRC) $(GNL_SRC)
 
 OBJS = ${SRC:.c=.o}
 
@@ -113,6 +119,7 @@ $(OBJDIR)%.o : %.c libft.h
 	@mkdir -p $(OBJDIR)
 	@mkdir -p $(OBJDIR)$(LIBFT_DIR)
 	@mkdir -p $(OBJDIR)$(PRINTF_DIR)
+	@mkdir -p $(OBJDIR)$(GNL_DIR)
 	$(CC) $(CFLAGS) -c $< -o $@ $(OFLAG)			
 
 norm: norm_h norm_m
