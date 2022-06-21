@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_printf_if_string.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 21:11:20 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:49:42 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/20 16:21:14 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 13:02:30 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_printf_helpers.h"
+#include "../libft.h"
+#include <stdarg.h>
 
-// Adding the original libft.
-# include "libft_init/libft_init.h"
+int	ft_printf_if_string(const char c, va_list *list)
+{
+	void	*ptr;
+	int		is_null;
 
-// Adding the ft_printf
-# include "libft_init/ft_printf_extras.h"
-# include "printf/ft_printf_helpers.h"
-# include "printf/ft_printf.h"
-
-#endif
+	if (c == 's')
+	{
+		ptr = va_arg(*list, void *);
+		is_null = ft_printf_if_null(ptr);
+		if (is_null)
+			return (is_null);
+		ft_putstr_fd((char *)ptr, 1);
+		return (ft_strlen((char *)ptr));
+	}
+	return (0);
+}

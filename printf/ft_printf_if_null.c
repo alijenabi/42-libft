@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_printf_if_null.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 21:11:20 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:49:42 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/22 18:01:38 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/05/22 21:20:32 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include <unistd.h>
 
-// Adding the original libft.
-# include "libft_init/libft_init.h"
+int	ft_printf_if_null(void *ptr)
+{
+	static char	*null = "(null)";
 
-// Adding the ft_printf
-# include "libft_init/ft_printf_extras.h"
-# include "printf/ft_printf_helpers.h"
-# include "printf/ft_printf.h"
-
-#endif
+	if (!ptr)
+	{
+		write(1, null, 6);
+		return (6);
+	}
+	return (0);
+}

@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_printf_if_char.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 21:11:20 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:49:42 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/20 16:11:46 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 13:02:02 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "../libft.h"
+#include <stdarg.h>
 
-// Adding the original libft.
-# include "libft_init/libft_init.h"
-
-// Adding the ft_printf
-# include "libft_init/ft_printf_extras.h"
-# include "printf/ft_printf_helpers.h"
-# include "printf/ft_printf.h"
-
-#endif
+int	ft_printf_if_char(const char c, va_list *list)
+{
+	if (c == 'c')
+	{
+		ft_putchar_fd((char)va_arg(*list, int), 1);
+		return (1);
+	}
+	return (0);
+}
