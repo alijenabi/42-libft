@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 22:47:55 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/04/25 22:47:00 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 12:24:25 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft_init.h"
 
 /**
- * Searhes for the character c on s from the end of s.
+ * Searhes for the character c on s from the beginning of s.
  * @param s[in] The string to search in.
  * @param c[in] The character to search for.
  * @return A pointer to the matched character or NULL if the character is not
@@ -22,18 +22,13 @@
  *       c is specified as '\0', these functions return a pointer to the 
  *       terminator.
  */
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	int	itr;
+	const int	isascii = ft_isascii(c);
 
-	itr = ft_strlen(s) - 1;
-	if (c == '\0')
-		return ((char *)&s[itr + 1]);
-	if (!ft_isascii(c))
+	while (*s && *s != c && isascii)
+		s++;
+	while (*s == c || !isascii)
 		return ((char *)s);
-	while (itr >= 0 && s[itr] != c)
-		itr--;
-	if (itr >= 0)
-		return ((char *)&s[itr]);
 	return (0);
 }

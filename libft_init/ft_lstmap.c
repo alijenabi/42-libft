@@ -6,11 +6,11 @@
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 11:35:15 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
+/*   Updated: 2022/06/21 12:24:25 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft_init.h"
 #include <stdlib.h>
 
 /**

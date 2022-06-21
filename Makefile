@@ -6,7 +6,7 @@
 #    By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/02 16:57:21 by alijenabi         #+#    #+#              #
-#    Updated: 2022/06/21 12:18:23 by alijenabi        ###   ########.fr        #
+#    Updated: 2022/06/21 12:27:10 by alijenabi        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CFLAGS ?= -Wall -Werror -Wextra
 OFLAG ?= -O3
 
 OBJDIR ?= build/
-LIBFT_DIR ?= libft/
+LIBFT_DIR ?= libft_init/
 
 LIBFT_MSRC :=	$(LIBFT_DIR)ft_atoi.c			\
 		$(LIBFT_DIR)ft_bzero.c					\

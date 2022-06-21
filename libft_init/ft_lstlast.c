@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 11:29:09 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/03 10:17:27 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 12:24:25 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
+#include "libft_init.h"
 
 /**
- * Iterates the list ’lst’ and applies the function ’f’ on the content of each
- * node.
- * @param lst[in, out] The address of a pointer to a node.
- * @param f[in]        The address of the function used to iterate on the list.
+ * Returns the last node of the list.
+ * @param lst[in] The beginning of the list.
+ * @return Last node of the list.
  */
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (!lst)
-		return ;
+		return (0);
 	while (lst->next)
-	{
-		if (lst->content)
-			f(lst->content);
 		lst = lst->next;
-	}
-	if (lst->content)
-		f(lst->content);
+	return (lst);
 }

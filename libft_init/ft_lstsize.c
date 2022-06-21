@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alijenabi <alijenabi@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 18:00:18 by alijenabi         #+#    #+#             */
-/*   Updated: 2022/06/21 12:13:55 by alijenabi        ###   ########.fr       */
+/*   Created: 2022/05/03 10:12:05 by alijenabi         #+#    #+#             */
+/*   Updated: 2022/06/21 12:24:25 by alijenabi        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../libft.h"
-#include <unistd.h>
+#include "libft_init.h"
 
 /**
- * Outputs the string 's' to the given file desciptor.
- * @param s[in]   The string to output.
- * @param fd[in]  The file descriptor on which to write.
+ * Counts the number of nodes in a list.
+ * @param lst[in] The beginning of the list.
+ * @return The length of the list.
  */
-void	ft_putstr_fd(char *s, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	if (!s)
-		return ;
-	while (*s)
-		ft_putchar_fd(*(s++), fd);
+	int	itr;
+
+	itr = 0;
+	if (!lst)
+		return (0);
+	itr++;
+	while (lst->next)
+	{
+		itr++;
+		lst = lst->next;
+	}
+	return (itr);
 }
